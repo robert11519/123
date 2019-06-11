@@ -1,0 +1,193 @@
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color:  #FAFDF6;
+  height: 100%;
+}
+#wrapper{
+  min-height: 100%;
+  position: relative;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 100px;
+  width: 100%;
+  height: 90px;
+  box-sizing: border-box;
+  background: #FAFDF6;
+}
+
+header nav {
+  padding-top: 40px;
+  color: green;
+  float: right;
+
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+  position: relative;
+  z-index: 2;
+}
+
+
+header nav ul li.sub-menu:before {
+  content: '\f078';
+  font-family: fontAwesome;
+  position: absolute;
+  line-height: 50px;
+  color: green;
+  right: 1px;
+}
+
+header nav ul li.active.sub-menu:before {
+  content: '\f077';
+}
+
+header nav ul li ul {
+  position: absolute;
+  left: 0;
+  background: #333;
+  display: none;
+
+}
+
+header nav ul li.active ul {
+  /* use li: hover instead */
+  display: block;
+}
+
+header nav ul li ul li {
+  display: block;
+  width: 125px;
+}
+
+header nav ul li a {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+header nav ul li a:hover {
+  color: #fff;
+  background: #2196f3;
+}
+
+header nav ul li a.active {
+  background: #2196f3;
+}
+
+.menu-toggle {
+  color: #fff;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 100px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #FAFDF6;
+}
+.footer-img{
+  padding-bottom: 10px;
+  float: right;
+}
+
+#carousel-controller{
+  margin: 0 100px;
+  top: 95px;
+  z-index: 1;
+}
+
+#carousel-controller2{
+  margin: 0 100px;
+  top: 100px;
+  z-index: 1;
+  float: right;
+  width: 43%;
+
+}
+
+
+@media (max-width: 1338px) {
+  header a img {
+     width:200px;
+  }
+  header {
+    padding: 0 20px;
+  }
+  .menu-toggle {
+    display: block;
+    color: green;
+    padding-top: 13px;
+
+  }
+  .carousel-inner {
+    overflow: visible;
+  }
+
+  header nav {
+    /* use display none or left:-100% to hide the nav  */
+    /* display: none; */
+    position: absolute;
+    top: 63px;
+    left: -100%;
+    width: 100%;
+    height: 600px;
+    background: #333;
+    transition: 0.5s;
+  }
+  header nav.active {
+    padding-top: 0;
+    padding: 0;
+    left: 0;
+  }
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+  header nav ul li a {
+    border-bottom: 0.9px solid rgba(0, 0, 0, .2);
+  }
+  header nav ul li.active ul {
+    position: relative;
+    background: #003e6f;
+
+  }
+  header nav ul li ul li {
+    width: 100%;
+  }
+
+  footer{
+    display: none;
+  }
+
+  #carousel-controller{
+    width: 100%;
+    margin: 0;
+    z-index: -1;
+
+  }
+
+
+}
